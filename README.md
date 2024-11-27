@@ -5,7 +5,7 @@ Features
 User Registration and Login: Secure user authentication.
 Post Grievances: Users can submit grievances with details like subject and description.
 View User Grievances: Display grievances submitted by the logged-in user.
-All Grievances: A list of grievances from all users, including status tracking (e.g., Pending, Resolved).
+All Grievances: A list of grievances from all users, including status tracking (e.g., Pending, Resolved)
 Responsive Design: Clean and modern UI for desktops and mobile devices.
 Technologies Used
 Frontend: HTML, CSS, and Bootstrap for styling.
