@@ -14,40 +14,44 @@ Database: MySQL for storing user data and grievances.
 This project demonstrates a practical implementation of CRUD operations and user session management, making it ideal for learning and expanding.
 
 
----- My SQL Commands for Database Design ----
-  -- Create the database
-  CREATE DATABASE IF NOT EXISTS grievance_portal;
-  USE grievance_portal;
-  
-  -- Create the users table
-  CREATE TABLE IF NOT EXISTS users (
-      id INT AUTO_INCREMENT PRIMARY KEY,
-      name VARCHAR(100) NOT NULL,
-      email VARCHAR(100) UNIQUE NOT NULL,
-      password VARCHAR(255) NOT NULL,
-      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-  );
-  
-  -- Create the grievances table
-  CREATE TABLE IF NOT EXISTS grievances (
-      id INT AUTO_INCREMENT PRIMARY KEY,
-      user_id INT NOT NULL,
-      subject VARCHAR(255) NOT NULL,
-      description TEXT NOT NULL,
-      status VARCHAR(50) DEFAULT 'Pending', -- Status field to track grievance status
-      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
-  );
-  
-  -- Insert sample users
-  INSERT INTO users (name, email, password) VALUES 
-  ('John Doe', 'john@example.com', 'hashed_password_1'),
-  ('Jane Smith', 'jane@example.com', 'hashed_password_2');
-  
-  -- Insert sample grievances
-  INSERT INTO grievances (user_id, subject, description, status) VALUES
-  (1, 'Road Repair Needed', 'There is a large pothole in front of my house.', 'Pending'),
-  (2, 'Power Outage', 'Power has been out in my area for 24 hours.', 'Resolved');
+# Grievance Portal Database Design
+
+Below is the MySQL script used to create the database schema for the Grievance Portal.
+
+```sql
+-- Create the database
+CREATE DATABASE IF NOT EXISTS grievance_portal;
+USE grievance_portal;
+
+-- Create the users table
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create the grievances table
+CREATE TABLE IF NOT EXISTS grievances (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    subject VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    status VARCHAR(50) DEFAULT 'Pending', -- Status field to track grievance status
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+-- Insert sample users
+INSERT INTO users (name, email, password) VALUES 
+('John Doe', 'john@example.com', 'hashed_password_1'),
+('Jane Smith', 'jane@example.com', 'hashed_password_2');
+
+-- Insert sample grievances
+INSERT INTO grievances (user_id, subject, description, status) VALUES
+(1, 'Road Repair Needed', 'There is a large pothole in front of my house.', 'Pending'),
+(2, 'Power Outage', 'Power has been out in my area for 24 hours.', 'Resolved');
 
 
 
