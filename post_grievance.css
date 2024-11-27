@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.grievance-list, .all-grievances {
+    margin-bottom: 30px;
+}
+
+.grievance-list ul, .all-grievances table {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.grievance-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.grievance-list li, .all-grievances table {
+    margin: 15px 0;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.grievance-list li {
+    margin-bottom: 15px;
+}
+
+.grievance-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.grievance-form input,
+.grievance-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.grievance-form textarea {
+    height: 100px;
+}
+
+.grievance-form button {
+    display: inline-block;
+    width: 100%;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.grievance-form button:hover {
+    background: #218838;
+}
+
+.all-grievances table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.all-grievances table th, .all-grievances table td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.all-grievances table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.all-grievances table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
